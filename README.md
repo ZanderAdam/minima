@@ -106,14 +106,25 @@ PASSWORD=password # you can create here password that you want
 
 Also, you can run minima using **run.sh**.
 
-### Installing via Smithery (MCP usage)
+### Running MCP server
+Run `run.sh` with option 3 to build the MCP server image and start the RAG components.
 
-To install Minima for Claude Desktop automatically via [Smithery](https://smithery.ai/protocol/minima):
+In Claude Desktop, go to Settings > Advanced > MCP Servers and add a new server with the following details:
 
-```bash
-npx -y @smithery/cli install minima --client claude
+```json
+{
+  "mcpServers": {
+    "minima": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/minima"
+      ]
+    }
+  }
+}
 ```
-
-**For MCP usage, please be sure that your local machines python is >=3.10 and 'uv' installed.**
 
 Minima (https://github.com/dmayboroda/minima) is licensed under the Mozilla Public License v2.0 (MPLv2).

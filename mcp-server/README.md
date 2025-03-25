@@ -8,17 +8,17 @@ just add folliwing to **/Library/Application\ Support/Claude/claude_desktop_conf
 
 ```
 {
-    "mcpServers": {
-      "minima": {
-        "command": "uv",
-        "args": [
-          "--directory",
-          "/path_to_cloned_minima_project/mcp-server",
-          "run",
-          "minima"
-        ]
-      }
+  "mcpServers": {
+    "minima": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "mcp/minima"
+      ]
     }
   }
+}
 ```
 After just open a Claude app and ask to find a context in your local files

@@ -5,7 +5,7 @@ import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-REQUEST_DATA_URL = "http://localhost:8001/query"
+REQUEST_DATA_URL = "http://host.docker.internal:8001/query"
 REQUEST_HEADERS = {
     'Accept': 'application/json',
     'Content-Type': 'application/json'

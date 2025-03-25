@@ -19,6 +19,7 @@ case "$user_choice" in
         ;;
     3)
         echo "Exiting the script. Goodbye!"
+        docker build -t mcp/minima mcp-server
         docker compose -f docker-compose-mcp.yml --env-file .env up --build
         ;;
     4)
